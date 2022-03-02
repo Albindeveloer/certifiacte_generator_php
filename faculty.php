@@ -1,41 +1,5 @@
-<?php include("connection.php");
 
-
-session_start();
-
-if (isset($_POST['log_btn'])) {
-  $Sname = $_POST['UserName'];
-  $password = $_POST['password'];
-  $sql = "SELECT * FROM staff WHERE Sname='$Sname'";
-  $result = $conn->query($sql);
-  $row1 = $result->fetch_assoc();
-  $num = mysqli_num_rows($result);
-  if($num!=0){
-    $sql = "SELECT * FROM staff WHERE Sname='$Sname' && password='$password'";
-  }
-    $_SESSION['staff_id'] = $row1['staff_id'];
-
-    if ($num == 1) {
-      header('location:CERTIFICATE/student.php');
-    } else {
-      header('location:CERTIFICATE/faculty.php');
-      echo '<script>alert("Enter the valid Details ..!!")</script>';
-    }
-    {
-    $sql = "SELECT * FROM f-register WHERE Sname='$Sname' && pasword='$password'";
-    $result = $conn->query($sql);
-    $row1 = $result->fetch_assoc();
-    $_SESSION['staff_id'] = $row1['staff_id'];
-    $num = mysqli_num_rows($result);
-    if ($num == 1) {
-      header('location:CERTIFICATE/faculty.php');
-    } else {
-      header('location:CERTIFICATE/faculty.php');
-      echo '<script>alert("Enter the valid Details ..!!")
-        </script>';
-    }
-  }
-} ?>
+<?php include('forms/facultyServer.php'); ?>
 
 
 <!DOCTYPE html>
@@ -143,15 +107,16 @@ if (isset($_POST['log_btn'])) {
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
                     <p class="text-center small">Enter your Sname & password to login</p>
+                    <?php include('forms/error.php'); ?>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form  method="post" action="faculty.php" class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
                       <label for="yourSname" class="form-label">User Name</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="UserName" class="form-control" id="yourSname" required>
+                        <input type="text" name="username" class="form-control" id="yourSname" required>
                         <div class="invalid-feedback">Please enter your User Name.</div>
                       </div>
                     </div>
@@ -169,7 +134,7 @@ if (isset($_POST['log_btn'])) {
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" name="log_btn">
+                      <button class="btn btn-primary w-100" type="submit" name="login_user">
                         Login
                       </button>
                     </div>

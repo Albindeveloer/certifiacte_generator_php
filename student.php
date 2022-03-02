@@ -1,7 +1,37 @@
-﻿
-<?php
-include 'connection.php';
+﻿<?php
+
+session_start();
+
+// If the session variable is empty, this
+// means the user is yet to login
+// User will be sent to 'login.php' page
+// to allow the user to login
+if (!isset($_SESSION['username'])) {
+	$_SESSION['msg'] = "You have to log in first";
+	header('location: faculty.php');
+}
+
+// Logout button will destroy the session, and
+// will unset the session variables
+// User will be headed to 'login.php'
+// after logging out
+if (isset($_GET['logout'])) {
+	session_destroy();
+	unset($_SESSION['username']);
+	header("location: faculty.php");
+}
 ?>
+
+<?php if (isset($_SESSION['success'])) : ?>
+			<div class="error success" >
+				<h3>
+					<?php
+						//echo $_SESSION['success'];
+						unset($_SESSION['success']);
+					?>
+				</h3>
+			</div>
+		<?php endif ?>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -14,7 +44,13 @@ include 'connection.php';
 		<!-- Always force latest IE rendering engine or request Chrome Frame -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<!-- Page Title -->
-        <title>Student Details</title>		
+        <title>Student Details</title>	
+
+
+        
+        
+        
+       
 		<!-- Meta Description -->
         <meta name="description" content="Blue One Page Creative HTML5 Template">
         <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
@@ -71,6 +107,18 @@ data-toggle="collapse" data-target=".navbar-collapse">
         <ul  class="nav navbar-nav">
           <li><a href="index.php">Home</a></li>
           <li id="nav"><a href="#contact">Contact</a></li>
+         
+          <?php if (isset($_SESSION['username'])) : ?>
+           <li> <strong><?php echo $_SESSION['username']; ?></strong></li>
+          <li ><img src="uploads/<?php echo $_SESSION['avatar'];?>" alt="Avatar" class="img-circle" width="50" height="50"> 
+          </li>
+          <li>
+				<a href="student.php?logout='1'" class="btn btn-primary">
+					 Logout
+				</a>
+			</li>
+
+          <?php endif ?>
         </ul>
       </nav>
 

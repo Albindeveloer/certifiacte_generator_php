@@ -1,31 +1,5 @@
-<?php
-// database connection code
-// $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
-
-$con = mysqli_connect('localhost', 'root', '','certi_db');
-if(isset($_POST['BtnSub'])){
-  $Sname = $_POST['UserName'];
-  $email = $_POST['Email'];
-  $password = $_POST['Password'];
-  $usertype = $_POST['UserType'];
-  $dept_id = $_POST['Dept_id'];
-
-  // database insert SQL code
-  $sql = "INSERT INTO staff (Sname,email,password,usertype,dept_id) VALUES ('$Sname', '$email', '$password', '$usertype','$dept_id')";
-
-  // insert in database 
-  $rs = mysqli_query($con, $sql);
-
-  if($rs)
-  {
-    header('location:student.php');
-
-  }
-}
-
-?>
-
-
+  
+<?php include('forms/facultyServer.php'); ?>
 
 
 <!DOCTYPE html>
@@ -124,12 +98,15 @@ if(isset($_POST['BtnSub'])){
 
 
 
-                <form  method="post" class="row g-3 needs-validation" >
+                <form  method="post" action="f-register.php" enctype="multipart/form-data" class="row g-3 needs-validation" >
+                  
+                <?php include('forms/error.php'); ?>
+
                   <div class="col-12">
                     <label for="yourSname" class="form-label">Username</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text" id="inputGroupPrepend"></span>
-                      <input type="text" name="UserName" class="form-control" id="yourSname" required>
+                      <input type="text" name="username" class="form-control" id="yourSname" required>
                       <div class="invalid-feedback">Please choose a Username.</div>
                     </div>
                   </div>
@@ -139,15 +116,27 @@ if(isset($_POST['BtnSub'])){
 
                   <div class="col-12">
                     <label for="yourEmail" class="form-label">Your Email</label>
-                    <input type="email" name="Email" class="form-control" id="yourEmail" required>
+                    <input type="email" name="email" class="form-control" id="yourEmail" required>
                     <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                   </div>
 
 
                   <div class="col-12">
-                    <label for="yourPassword" class="form-label">Password</label>
-                    <input type="password" name="Password" class="form-control" id="yourPassword" required>
+                    <label for="yourPassword" class="form-label">Confirm Password</label>
+                    <input type="password" name="password_1" class="form-control" id="yourPassword" required>
                     <div class="invalid-feedback">Please enter your password!</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="" class="form-label">Password</label>
+                    <input type="password" name="password_2" class="form-control" id="yourPassword" required>
+                    <div class="invalid-feedback">Please reenter your password!</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="avatar" class="form-label">photo</label>
+                    <input type="file" name="profilepic" class="form-control" id="" required>
+                    <div class="invalid-feedback">Please upload photo</div>
                   </div>
 
 
@@ -189,7 +178,7 @@ if(isset($_POST['BtnSub'])){
                 </div>
               </div> -->
               <div class="col-12">
-                <button class="btn btn-primary w-100" type="submit" name="BtnSub">Create Account</button>
+                <button class="btn btn-primary w-100" type="submit" name="reg_user">Create Account</button>
               </div>
               <div class="col-12">
                 <p class="small mb-0">Already have an account? <a href="faculty.php">Log in</a></p>
