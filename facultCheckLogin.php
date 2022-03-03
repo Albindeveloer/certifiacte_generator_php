@@ -1,6 +1,7 @@
 <?php include('header.php');?>
 
 <section>
+    <center>
 
 <?php if($_SESSION['usertype']=='teacher') : ?>
 
@@ -38,12 +39,13 @@
 </div>
  
  <?php endif ?>
+ </center>
 
 <div id="content">
 </div>
 
-
+ 
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="aja.js"></script>
+<script type="text/javascript" src="js/javascriptME.js"></script>

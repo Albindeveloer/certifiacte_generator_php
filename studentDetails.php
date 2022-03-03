@@ -1,16 +1,16 @@
-<section id="facts" class="facts">
+<section>
       <div class="row">
         <div class="col-lg-6">
 	<div class="card">
             <div class="card-body">
-						<div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
+						<div style=" width: 50vw; margin-left : 25vw;" class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
 							<h2>Student Details</h2>
 							<div class="devider"><i class="fa fa-star-o fa-lg"></i></div>
 						</div>
 						
 						
 
-<form>
+<form style=" width: 50vw;height:50vw; margin-left : 25vw;">
                 <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                   <div class="col-sm-10">
