@@ -65,7 +65,7 @@ if (isset($_POST['reg_user'])) {
 
 		$new_file_name=time().$file_name;                                  //timevach name koduthu
 
-		move_uploaded_file($temp_path,"../uploads/".$new_file_name);                    //temppath,evidekano
+		move_uploaded_file($temp_path,"./uploads/".$new_file_name);                    //temppath,evidekano
 
  
 
@@ -81,6 +81,7 @@ if (isset($_POST['reg_user'])) {
 		// in the session variable
 		$_SESSION['username'] = $Sname;
 		$_SESSION['avatar']=$new_file_name;
+		$_SESSION['usertype'] = $usertype;
 		
 		// Welcome message
 		$_SESSION['success'] = "You have logged in";
@@ -88,7 +89,7 @@ if (isset($_POST['reg_user'])) {
 		// Page on which the user will be
 		// redirected after logging in
         if($rs){
-            header('location: ./student.php');
+            header('location: ./facultCheckLogin.php');
         }else{
             echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
         }
@@ -130,17 +131,18 @@ if (isset($_POST['login_user'])) {
 			$row = mysqli_fetch_row($results);
 			print_r($row);
 			$avatar=$row[6];
-			
+			$userType=$row[3];
 			// Storing username in session variable
 			$_SESSION['username'] = $Sname;
 			$_SESSION['avatar']=$avatar;
+			$_SESSION['usertype']=$userType;
 			
 			// Welcome message
 			$_SESSION['success'] = "You have logged in!";
 			
 			// Page on which the user is sent
 			// to after logging in
-			header('location: ./student.php');
+			header('location: ./facultCheckLogin.php');
 		}
 		else {
 			

@@ -146,21 +146,7 @@ bounceInDown animated" data-wow-duration="500ms">
 </div>
 </div>
 <!-- end service item -->
-<!-- service item -->
-<div class="col-md-4 wow fadeInUp" data-wowduration="500ms">
-<div class="center">
-<div class="service-item">
-<div class="service-icon">
-<i class="fa fa-pencil fa-2x"></i>
-</div></div>
-<div class="service-desc">
-<a href="student.php">
-<h3>STUDENT DETAILS</h3>
-</a>
-</div>
-</div>
-</div>
-<!-- end service item -->
+
 <!-- service item -->
 <div class="col-md-4 wow fadeInLeft" data-wowduration="500ms" data-wow-delay="500ms">
 <div class="service-item">
