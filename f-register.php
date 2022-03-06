@@ -140,10 +140,10 @@
                   </div>
 
 
-                  <div>
+                  <div class="col-12" id="ftype">
                     <label>Faculty type</label>
                     <div>
-                      <select name="UserType" class="form-select" aria-label="Default select example">
+                      <select name="UserType" class="form-control" aria-label="Default select example">
                         <option selected>select one</option>
                         <option value="principal">principal</option>
                         <option value="HOD">HOD</option>
@@ -155,15 +155,41 @@
 
                   <label>Department</label>
 
-                  <div>
-                    <select name="Dept_id" class="form-select" aria-label="Default select example">
-                      <option selected>select one</option>
+                  <div class="col-12">
+                    <select name="Dept_id" class="form-control" aria-label="Default select example">
+                      <option selected>select department</option>
                       <option value="1">Computer science</option>
                       <option value="2">Hotal management</option>
                       <option value="3">Commerce</option>
                       <option value="4">Language</option>
                     </select>
                   </div>
+
+                  
+                  <div class="teacher box">
+                  <label>batch</label>
+                    <select name="Batch_id" class="form-control" aria-label="Default select example">
+                      <option value="" selected>select batch</option>
+                      <option value="1">2019</option>
+                      <option value="2">2021</option>
+                      <option value="3">2022</option>
+                      <option value="4">2023</option>
+                    </select>
+                  </div>
+
+                  
+
+                  <div class="teacher box">
+                  <label>course</label>
+                    <select name="Course_id" class="form-control d-none"  aria-label="Default select example">
+                      <option value="" selected>select course</option>
+                      <option value="1">BCA</option>
+                      <option value="2">BSC</option>
+                      <option value="3">BSC HM</option>
+                      <option value="4">BCOM</option>
+                    </select>
+                  </div>
+
               </div>
               <br>
 
@@ -248,6 +274,24 @@ key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
   </script> -->
   <!-- Custom Functions -->
   <script src="js/custom.js"></script>
+
+
+  <script>
+$(document).ready(function(){
+    $("#ftype").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+
 </body>
 
 </html>

@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <section>
       <div class="row">
         <div class="col-lg-6">
@@ -8,10 +14,25 @@
 							<div class="devider"><i class="fa fa-star-o fa-lg"></i></div>
 						</div>
 						
-						
+					
 
 <form style=" width: 50vw;height:50vw; margin-left : 25vw;">
-                <div class="row mb-3">
+
+      <div class="row mb-3" hidden>
+                  <label for="inputText" class="col-sm-2 col-form-label">Batchid</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" value="<?php $_SESSION['batch_id']; ?>">
+                  </div>
+		  </div>
+      <div class="row mb-3" hidden>
+                  <label for="inputText" class="col-sm-2 col-form-label">courseid</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" value="<?php $_SESSION['course_id']; ?>">
+                  </div>
+		  </div>
+      
+
+      <div class="row mb-3">
                   <label for="inputText" class="col-sm-2 col-form-label">Name</label>
                   <div class="col-sm-10">
                     <input type="text" class="form-control">
@@ -31,12 +52,7 @@
                   </div>
 		</div>
 
-		<div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Batch</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control">
-                  </div>
-		</div>
+	
 
 
  <div class="row mb-3">
@@ -66,7 +82,7 @@
 
 
                 <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">ID</label>
+                  <label for="inputNumber" class="col-sm-2 col-form-label">phone</label>
                   <div class="col-sm-10">
                     <input type="number" class="form-control">
                   </div>
@@ -87,22 +103,16 @@
                 </div>
 
                 <div class="row mb-3">
-                  <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
+                  <label for="inputDate" class="col-sm-2 col-form-label">DOB</label>
                   <div class="col-sm-10">
                     <input type="date" class="form-control">
                   </div>
                 </div>
                 
-		<div class="row mb-3">
-                  <label for="inputDate" class="col-sm-2 col-form-label">Date</label>
-                  <div class="col-sm-10">
-                    <input type="date" class="form-control">
-                  </div>
-                </div>
-                
+		
                 
                 <div class="row mb-3">
-                  <label for="inputPassword" class="col-sm-2 col-form-label">Textarea</label>
+                  <label for="inputPassword" class="col-sm-2 col-form-label">address</label>
                   <div class="col-sm-10">
                     <textarea class="form-control" style="height: 100px"></textarea>
                   </div>
