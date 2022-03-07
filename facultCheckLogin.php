@@ -7,8 +7,8 @@
 
 <div >
 
-<button type="button" id="button" class="btn btn-info">Student Details </button>
-<a type="button" class="btn btn-success">view Details</a>
+<button type="button" id="sbutton" class="btn btn-info">Student Details </button>
+<button type="button" id="svbutton" class="btn btn-success">view Details</button>
 <a type="button" class="btn btn-success">edit</a>
 
 </div>
@@ -40,12 +40,12 @@
  
  <?php endif ?>
  </center>
-
+<br><br>
 <div id="content">
 </div>
 
  
 </section>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
 <script type="text/javascript" src="js/javascriptME.js"></script>

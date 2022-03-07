@@ -81,7 +81,7 @@ if (isset($_POST['reg_user'])) {
 
 		move_uploaded_file($temp_path,"./uploads/".$new_file_name);                    //temppath,evidekano
 
-    if($usertype=='HOD' || 'principal'){
+    if($usertype=='HOD'){
 		$query = "INSERT INTO staff (Sname,email,password,usertype,dept_id,batch_id,course_id,avatar)
 				VALUES('$Sname', '$email', '$password', '$usertype','$dept_id',NULL,NULL,'$new_file_name')";
 
@@ -159,12 +159,14 @@ if (isset($_POST['login_user'])) {
 			$userType=$row[3];
 			$batch_id=$row[5];
 			$course_id=$row[6];
+			$dept_id=$row[4];
 			// Storing username in session variable
 			$_SESSION['username'] = $Sname;
 			$_SESSION['avatar']=$avatar;
 			$_SESSION['usertype']=$userType;
 			$_SESSION['batch_id']=$batch_id;
 			$_SESSION['course_id']=$course_id;
+			$_SESSION['dept_id']=$dept_id;
 			
 			// Welcome message
 			$_SESSION['success'] = "You have logged in!";

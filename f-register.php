@@ -171,9 +171,9 @@
                     <select name="Batch_id" class="form-control" aria-label="Default select example">
                       <option value="" selected>select batch</option>
                       <option value="1">2019</option>
-                      <option value="2">2021</option>
-                      <option value="3">2022</option>
-                      <option value="4">2023</option>
+                      <option value="2">2020</option>
+                      <option value="3">2021</option>
+                      <option value="4">2022</option>
                     </select>
                   </div>
 

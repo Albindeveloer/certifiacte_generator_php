@@ -42,10 +42,10 @@ if (isset($_GET['logout'])) {
 		
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		
+        
         <title>Student Details</title>	
 
 
-        
         
         
        
