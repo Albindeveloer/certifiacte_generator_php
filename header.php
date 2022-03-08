@@ -102,7 +102,7 @@ data-toggle="collapse" data-target=".navbar-collapse">
           <li ><img src="uploads/<?php echo $_SESSION['avatar'];?>" alt="Avatar" class="img-circle" width="50" height="50"> 
           </li>
           <li>
-				<a href="student.php?logout='1'" class="btn btn-primary">
+				<a href="facultCheckLogin.php?logout='1'" class="btn btn-primary">
 					 Logout
 				</a>
 			</li>
