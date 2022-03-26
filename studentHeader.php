@@ -38,6 +38,8 @@ if (isset($_GET['logout'])) {
 
 <html>
     <head>
+      
+</head>
     
 <body><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -71,24 +73,21 @@ if (isset($_GET['logout'])) {
       <?php endif ?>
     </ul>
   </div>
+<div class="collapse navbar-collapse" id="navbar-list-4">
+  <button type="button" id="TCbutton" class="btn btn-info">TC </button>
+<button type="button" id="CCbutton" class="btn btn-success">Contact Certificate</button>
+    </div>
 </nav>
 
 
-<?php if (isset($_SESSION['stname'])) : ?>
-  <a  class="nav-item active"><?php echo $_SESSION['stname']; ?></a>
-    <a class="navbar-brand" href="#">
-      <img src="uploads/student/<?php echo $_SESSION['stavatar'];?>" alt="..." height="36">
-    </a>
 
-   
-				<a href="studentHeader.php?logout='1'" class="btn btn-primary">
-					 Logout
-				</a>
-			
 
-          <?php endif ?>
-
-      
+<div id="content">
+</div>
 
 </body>
 </html>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
+<script type="text/javascript" src="js/javascriptME.js"></script>

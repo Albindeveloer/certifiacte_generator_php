@@ -121,11 +121,7 @@
                   </div>
 
 
-                  <div class="col-12">
-                    <label for="yourPassword" class="form-label">Confirm Password</label>
-                    <input type="password" name="password_1" class="form-control" id="yourPassword" required>
-                    <div class="invalid-feedback">Please enter your password!</div>
-                  </div>
+
 
                   <div class="col-12">
                     <label for="" class="form-label">Password</label>
@@ -133,6 +129,11 @@
                     <div class="invalid-feedback">Please reenter your password!</div>
                   </div>
 
+                  <div class="col-12">
+                    <label for="yourPassword" class="form-label">Confirm Password</label>
+                    <input type="password" name="password_1" class="form-control" id="yourPassword" required>
+                    <div class="invalid-feedback">Please enter your password!</div>
+                  </div>
                   <div class="col-12">
                     <label for="avatar" class="form-label">photo</label>
                     <input type="file" name="profilepic" class="form-control" id="" required>

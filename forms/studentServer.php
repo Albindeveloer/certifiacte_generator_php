@@ -36,12 +36,15 @@
         
         $row = mysqli_fetch_row($result);
         print_r($row);
+
+        $st_id=$row[0];
         $stname=$row[1];
         $batch_id=$row[3];
 		$course_id=$row[4];
         $dept_id=$row[5];
         $stavatar=$row[12];
 
+        $_SESSION['st_id'] = $st_id;
         $_SESSION['stname'] = $stname;
 		$_SESSION['stavatar']=$stavatar;
 		$_SESSION['stbatch_id']=$batch_id;
